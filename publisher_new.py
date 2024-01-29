@@ -118,7 +118,7 @@ class SteamPublisher:
         data = {
             "game": game_name,
             "id": game_id,
-            "count": response["response"]["result"]
+            # "count": response["response"]["result"]
         }
 
         return Event(json.dumps(data).encode("utf-8"), mimetype="application/json")
