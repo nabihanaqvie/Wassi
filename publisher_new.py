@@ -23,7 +23,7 @@ class SteamPublisher:
     SteamPublisher queries the steam API and publishes events to Ensign.
     """
 
-    def __init__(self, topic="ISteamApps_GetAppList_v2", interval=900, steam_key='B83E88D5A9D4B00E1A139A6D9EC3E77B', game_list_endpoint=GAME_LIST_ENDPOINT, base_uri=PLAYER_QUERY, ensign_creds=""):
+    def __init__(self, topic="ISteamApps_GetAppList_v2", interval=900, steam_key='B83E88D5A9D4B00E1A139A6D9EC3E77B', game_list_endpoint=GAME_LIST_ENDPOINT, base_uri=GAME_LIST_ENDPOINT, ensign_creds=""):
         """
         Parameters
         ----------
