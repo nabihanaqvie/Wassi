@@ -11,11 +11,11 @@ count = 0
 
 
 #while loop 10 times 
-while cursor and count <= 10:
+#### Changed the count to 5 because 10 was giving an error on the 7th loop. This means that that there were not that many reviews to loop 10 times. 
+while cursor and count <= 5:
     url = f'https://store.steampowered.com/appreviews/1721470?json=1&purchase_type=all&day_range=365&num_per_page=100&cursor={cursor}'
     response = requests.get(url)
     data = response.json()
-    print(data.keys())
     query_summary = data.get('query_summary', {})  # Use a default empty dictionary if 'query_summary' is missing
 
    
@@ -65,7 +65,7 @@ while cursor and count <= 10:
     if cursor:
         url = f'https://store.steampowered.com/appreviews/1721470?json=1&purchase_type=all&day_range=365&num_per_page=100&cursor={cursor}'
 
-print(new_df)
+#print(new_df)
 
 
 #create author and recs table 
@@ -82,7 +82,7 @@ conn = psycopg2.connect(
     port="5432"
 )
 
-engine = create_engine('postgresql://postgres:wassiwassi@localhost:5432/postgres') 
+#engine = create_engine('postgresql://postgres:wassiwassi@localhost:5432/postgres') 
 
 # Drop existing tables if they exist
 with conn.cursor() as cur:
